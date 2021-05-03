@@ -1,0 +1,128 @@
+from bs4 import BeautifulSoup
+import requests 
+import pandas as pd
+
+url= "se copia de la web"
+## para analizar como inicia la linea de código en el html y tambien la CLASE
+page =requests.get(url)
+soup= BeautifulSoup(page.content, "html,parser")
+
+#equipos 
+eq= soup.find_all("span", clas_="nombre equipo") # si solo imprimimos nos saldra con codigo del html 
+equipos=list()
+
+count=0
+for i in eq:
+   if count <20:
+
+   equipos.append(i.text)# solo mostrara el nombre del quipo 
+   else:
+       break
+   count =count+1
+print(equipos)
+
+#puntajes
+pt= soup.find_all("td", clas_="destacado") # si solo imprimimos nos saldra con codigo del html 
+puntos=list()
+
+count=0
+for i in pt:
+   if count <20:
+
+       puntos.append(i.text)# solo mostrara el nombre del quipo 
+   else:
+       break
+   count =count+1
+print(puntos)
+
+#creando un df
+
+df=pd,DataFrame({"Nombre":equipos ,"puntos": puntos} , index=list(range(1,21)))
+print(df)
+-------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+#fron 1 an half video
+-pip install BeautifulSoup
+-pip install lxml
+from bs4 import BeautifulSoup
+import requests 
+import pandas as pd
+
+with open("home.html","r") as html_file ->solo lectura no pretty
+     content=html_file.read()
+     print(content)
+     
+     soup=BeautifulSoup(content, "lxml") ->lectura pretty
+     print(soup.prettify())
+     tags=soup.find("h5") ->encuentra h5 y lo imprime el primero que encuentra
+     print(tags)
+     courses_html_tags=soup.find_all("h5") ->encuentra todos los h5 en el texto
+      
+     for course in courses_html_tags:
+              print(course.text) ->solo muestra el contyenido enn texto , ya no la estructura HTML 
+     
+#creando un program a de costos de cursos y cursos
+with open("home.html","r") as html_file ->solo lectura no pretty
+     content=html_file.read()
+     print(content)
+     
+     soup=BeautifulSoup(content, "lxml") ->lectura pretty
+     print(soup.prettify())
+     course_cards=soup.find_all("dic", class_="card")
+     for course in course_cards:
+            course_name=course.h5.text ->h5 es la palabra inicial de linea
+            course_price=course.a.text.split()[-1]
+            
+            print(course_name)
+            print(course_price)
+            #print(f"{couse_name} cots {course_price}")
+            #python for begginers costs 4 soles
+-----------------------------------------------------------------
+#scrapiando desde la web
+from bs4 import BeautiflSoup
+import requests
+
+print(2 ingrese un unfamilair skill")
+unfamiliar_skillinput(">")
+print(f"filtro:{unfamiliar_skill})
+
+html_text= requests.get(" url ingresar").text  ->muestra el texto HTML de la pagina
+#print(html.text)
+soup=BeautifulSoup(html_text , "lxml")
+#jobs=soup.find_all("li", class_"clearfxxxx") ->se recibira todos los jobs de la pgina 
+#print(jobs)
+
+jobs=soup.find_all("li", class_"clearfxxxx")
+
+for job in jobs:
+    published_date=job.find("span" , clas_:"simckndknc").span.text ->para fechas en especificas
+    if "few" in published_date:
+       #job=soup.find("li", class_"clearfxxxx") ->solo para un job y luego automatizar
+       company=job.find("h3" , class_="jousnalis").text.replace( " ","") eliminando espacio
+       skills=job.find("span" , class_"spr-skills").text.replace(" ","")
+       #published_date=job.find("span" , clas_:"simckndknc").span.text ->hay dos span
+       moreinfo=job.header.h2.a["href"]  ->para evitar html 
+ 
+       if unfamilia_skil not in skills:
+          print(f"company:{company.strip()}") ->se le agrega el strip para eliminar los espacion en blanco 
+          print(f"requires skills:{skills.strip()}")
+          print(f"moreinfo:{moreinfo}")
+          print("")
+
+#añadiendo mas informacion(link) para cada job:
+#cunado hacemos click hay mas infor de ese obhjectpo
+
+------------------------------------------------------------<
+------------------------------------------------------------<
+------------------------------------------------------------<
+para el timpo se deb importa time
+
+
+
+
+
+
+
+
+
