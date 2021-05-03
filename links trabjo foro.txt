@@ -1,0 +1,16 @@
+class Empleado:
+   def_init_(self,clave,nombre,puesto):
+         self.clave=clave
+         self.nombre=nombre
+         self.puesto=puesto
+   def toList(self,clave):
+         return list(clave)
+
+
+   empleado=Empleado("asfkhlllm","Adan","Desarrollador")
+   print(empleado.clave)
+https://www.youtube.com/watch?v=Oc6cmxWlWhU
+https://www.youtube.com/watch?v=oqjQFNSTthE
+https://www.youtube.com/watch?v=H9SnCQvoNHk
+https://www.youtube.com/watch?v=a21PHpkXDlk
+https://www.youtube.com/watch?v=Lw0M3G1ltNg
